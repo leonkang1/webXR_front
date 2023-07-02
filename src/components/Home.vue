@@ -76,7 +76,7 @@ export default{
             const {data:res} = await axios.get("/api/get_episode_status", {
                 params: {"session_id": this.session_id}
             });
-
+            console.log("res", res);
             if (res.is_active == false){
                 if (res.is_success){
                     this.task_info = "Task succeeded"
