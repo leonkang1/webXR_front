@@ -26,7 +26,7 @@ export default{
     methods:{
         async handleKeyDown(event){
             console.log("key", event.key);
-            const {data:res} = await axios.get(
+            const {data:res} = await axios.post(
                 "/api/post_action", {"session_id": this.session_id, "action": event.key}
             );
         },
