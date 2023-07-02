@@ -35,7 +35,7 @@ export default{
     },
     methods:{
         async handleKeyDown(event){
-            console.log("key", event.key);
+            // console.log("key", event.key);
             const {data:res} = await axios.post(
                 "/api/post_action", {"session_id": this.session_id, "action": event.key}
             );
@@ -76,9 +76,9 @@ export default{
             const {data:res} = await axios.get("/api/get_episode_status", {
                 params: {"session_id": this.session_id}
             });
-            console.log("res", res);
-            if (res.is_active == false){
-                if (res.is_success){
+            // console.log("res", res);
+            if (res.data.is_active == false){
+                if (res.data.is_success){
                     this.task_info = "Task succeeded"
                 } else {
                     this.task_info = "Task failed";
